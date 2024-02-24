@@ -1,17 +1,21 @@
 class Post {
-  int? userId;
-  int? id;
-  String? title;
-  bool? completed;
-
-  Post({this.userId, this.id, this.title, this.completed});
+  int userId;
+  int id;
+  String title;
+  bool completed;
+  Post({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.completed,
+  });
 
   factory Post.fromMap(Map<String, dynamic> json) {
     return Post(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      completed: json['completed'],
+      userId: json['userId'] ?? 0,
+      id: json['id'] ?? 0,
+      title: json['title'] ?? "0",
+      completed: json['completed'] ?? false,
     );
   }
 
